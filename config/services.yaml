@@ -26,5 +26,10 @@ services:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
 
+    admin.category:
+        class: App\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Post, manager_type: orm, label: Post }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
